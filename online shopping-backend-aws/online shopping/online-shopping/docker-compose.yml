@@ -1,0 +1,23 @@
+version: '2'
+networks:
+  onlineshopping_network:
+    name: onlineshopping_network
+
+services:
+  mongo:
+    image: dockerchulbul/mongo
+    container_name: mongo
+    ports:
+      - '27017:27017'
+    networks:
+      - onlineshopping_network
+
+  onlineshopping:
+    image: dockerchulbul/onlineshopping
+    container_name: onlineshopping
+    ports:
+      - '8081:8081'
+    networks:
+      - onlineshopping_network
+    links:
+      - mongo

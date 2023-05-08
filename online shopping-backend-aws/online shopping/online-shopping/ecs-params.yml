@@ -1,0 +1,9 @@
+version: 1
+task_definition:
+  services:
+    mongo:
+      cpu_shares: 250
+      mem_limits: "150m"
+    onlineshopping:
+      cpu_share: 250
+      mem_limit: "800m"
